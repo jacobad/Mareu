@@ -33,6 +33,12 @@ public class Meeting implements Parcelable {
      */
     private String user;
 
+     /* public getUserText{
+        for (user user : meeting[FAKE_MEETINGS])
+           (int user=0; user<meeting[FAKE_MEETINGS].size(); user++)
+            return(meeting[FAKE_MEETINGS].get(user));
+    }*/
+
 
     public Meeting(int id, Long date, int placeId, String subject, String user) {
         this.id = id;

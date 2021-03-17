@@ -13,6 +13,4 @@ public interface MeetingApiService {
     void deleteMeeting(Meeting meeting);
 
     Meeting getMeetingByID(int id);
-
-
 }

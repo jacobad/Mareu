@@ -18,6 +18,7 @@
         android:layout_margin="16dp"
         android:orientation="vertical">
 
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/subject"
             android:layout_width="fill_parent"
@@ -47,6 +48,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:paddingStart="4dp"
+                android:text="Lieu"
                 android:textSize="18dp" />
 
             <androidx.appcompat.widget.AppCompatSpinner
@@ -55,18 +57,24 @@
                 android:layout_height="wrap_content"
                 android:pointerIcon="arrow"
                 android:spinnerMode="dialog"
-                 />
+                android:backgroundTint="@color/black"
+                tools:targetApi="n" />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatSpinner
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date_layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp">
 
-
-
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/time_layout"
@@ -79,25 +87,35 @@
                 android:id="@+id/time_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="heure"
+                android:text="time"
                 android:inputType="textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/participants_layout"
+            android:id="@+id/Users_layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/participants_input"
+                android:id="@+id/User_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="user"
                 android:inputType="textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <Button
+            android:id="@+id/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="30dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="Crée la réunion"/>
     </LinearLayout>
      </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
