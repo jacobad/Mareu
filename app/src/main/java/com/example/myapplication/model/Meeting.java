@@ -1,10 +1,18 @@
 package com.example.myapplication.model;
 
+import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.myapplication.meetingFragment;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+
+import static com.example.myapplication.service.DummyFakeApiMeetingGenerator.FAKE_MEETINGS;
+import static com.example.myapplication.service.DummyFakeApiMeetingGenerator.USERS;
 
 public class Meeting implements Parcelable {
 
@@ -31,21 +39,30 @@ public class Meeting implements Parcelable {
     /**
      * Meeting User List
      */
-    private String user;
-
-     /* public getUserText{
-        for (user user : meeting[FAKE_MEETINGS])
-           (int user=0; user<meeting[FAKE_MEETINGS].size(); user++)
-            return(meeting[FAKE_MEETINGS].get(user));
-    }*/
+    private List users;
 
 
-    public Meeting(int id, Long date, int placeId, String subject, String user) {
+
+
+
+
+
+
+
+
+
+    /* Intent intent = new Intent(Meeting.this , meetingFragment.class);
+   Intent intent = new Intent(Meeting.this, meetingFragment.class);
+                intent.putExtra(SPINNER_LIST, "users");
+               context.startActivity(profileActivity);*/
+
+
+    public Meeting(int id, Long date, int placeId, String subject, List users) {
         this.id = id;
         this.date = date;
         this.placeId = placeId;
         this.subject = subject;
-        this.user = user;
+        this.users = users ;
     }
 
     protected Meeting(Parcel in) {
@@ -57,7 +74,6 @@ public class Meeting implements Parcelable {
         }
         placeId = in.readInt();
         subject = in.readString();
-        user = in.readString();
     }
 
     @Override
@@ -71,7 +87,6 @@ public class Meeting implements Parcelable {
         }
         dest.writeInt(placeId);
         dest.writeString(subject);
-        dest.writeString(user);
     }
 
     @Override

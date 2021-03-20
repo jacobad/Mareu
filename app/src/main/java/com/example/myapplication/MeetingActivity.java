@@ -26,15 +26,12 @@ public class MeetingActivity extends AppCompatActivity {
     private TextInputEditText mTime;
     private TextInputEditText mDate;
     private TextInputEditText mUser;
-    private Spinner mPlace;
     private Button mButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mPlace = (Spinner) findViewById(R.id.place_spinner);
         mNameInput = (TextInputEditText) findViewById(R.id.name_input);
         mDate = (TextInputEditText)findViewById(R.id.date_input);
         mTime = (TextInputEditText)findViewById(R.id.time_input);
