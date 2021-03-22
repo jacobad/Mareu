@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import static com.example.myapplication.service.DummyFakeApiMeetingGenerator.FAKE_MEETINGS;
-import static com.example.myapplication.service.DummyFakeApiMeetingGenerator.USERS;
+
 
 public class Meeting implements Parcelable {
 
@@ -39,31 +39,41 @@ public class Meeting implements Parcelable {
     /**
      * Meeting User List
      */
-    private List users;
+    private String users;
+
+
+    /**
+     * Meeting User List
+     */
+
+    private Integer avatar;
 
 
 
 
 
-
-
-
-
-
-
-    /* Intent intent = new Intent(Meeting.this , meetingFragment.class);
-   Intent intent = new Intent(Meeting.this, meetingFragment.class);
-                intent.putExtra(SPINNER_LIST, "users");
-               context.startActivity(profileActivity);*/
-
-
-    public Meeting(int id, Long date, int placeId, String subject, List users) {
+    public Meeting(int id, Long date, int placeId, String subject, String users, Integer avatar) {
         this.id = id;
         this.date = date;
         this.placeId = placeId;
         this.subject = subject;
         this.users = users ;
+        this.avatar = avatar;
     }
+    public Integer getId() {
+        return id;
+    }
+
+    public int getPlaceId() {return placeId ;}
+
+    public String getSubject() {return subject;}
+
+    public String getUsers() {return users;}
+
+    public Integer getAvatar() { return avatar = avatar;}
+
+
+
 
     protected Meeting(Parcel in) {
         id = in.readInt();

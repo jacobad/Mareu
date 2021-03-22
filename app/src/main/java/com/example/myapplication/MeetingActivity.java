@@ -1,10 +1,19 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityEventSource;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -28,10 +37,24 @@ public class MeetingActivity extends AppCompatActivity {
     private TextInputEditText mUser;
     private Button mButton;
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+    }
+
+
+
+   // @Override
+    public AccessibilityEventSource onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_main, container, false);
+        Context context = view.getContext();
+
         mNameInput = (TextInputEditText) findViewById(R.id.name_input);
         mDate = (TextInputEditText)findViewById(R.id.date_input);
         mTime = (TextInputEditText)findViewById(R.id.time_input);
@@ -55,6 +78,26 @@ public class MeetingActivity extends AppCompatActivity {
 
             }
         });
+
+        return view;
+    }
+
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 };
 

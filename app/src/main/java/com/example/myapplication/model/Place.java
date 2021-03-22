@@ -15,5 +15,7 @@ public class Place {
         this.id = id;
         this.Name = Name;
     }
+  public Integer getId() {return id;}
+  public String getName() {return  Name;}
 
 }

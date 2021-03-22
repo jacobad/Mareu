@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Select Room:" />
+            android:text="Select Room:"/>
 
         <Spinner
             android:id="@+id/spinner_room"
