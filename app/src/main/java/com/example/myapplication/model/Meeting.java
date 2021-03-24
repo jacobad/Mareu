@@ -27,7 +27,7 @@ public class Meeting implements Parcelable {
     private Long date;
 
     /**
-     * Meeting Place
+     * Meeting Room
      */
     private int placeId;
 

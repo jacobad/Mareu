@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,14 +15,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.myapplication.model.Meeting;
-import com.example.myapplication.model.Place;
+import com.example.myapplication.model.Room;
 import com.example.myapplication.service.DummyFakeApiRoomGenerator;
 import com.example.myapplication.view.PlaceArrayAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.Inflater;
 
 import static android.R.layout.simple_spinner_item;
 
@@ -54,9 +47,9 @@ public class meetingFragment extends Fragment {
         spinnerRoom = view.findViewById(R.id.spinner_room);
 
 
-        Place[] rooms = (Place[]) DummyFakeApiRoomGenerator.ROOM_PLACE.toArray();
+        Room[] rooms = (Room[]) DummyFakeApiRoomGenerator.ROOM_PLACE.toArray();
 
-        ArrayAdapter<Place>adapter = new PlaceArrayAdapter(getActivity(),simple_spinner_item,rooms);
+        ArrayAdapter<Room>adapter = new PlaceArrayAdapter(getActivity(),simple_spinner_item,rooms);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRoom.setAdapter(adapter);
@@ -72,12 +65,12 @@ public class meetingFragment extends Fragment {
 
             }
         });
-        view.findViewById(R.id.Button).setOnClickListener(new View.OnClickListener() {
+      /* view.findViewById(R.id.Button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().onBackPressed();
             }
-        });
+        });*/
 
 
 
@@ -86,7 +79,7 @@ public class meetingFragment extends Fragment {
 
     private void onItemSelectedHandler(AdapterView<?> adapterView, View view, int position, long id) {
         Adapter adapter = adapterView.getAdapter();
-        Place place = (Place) adapter.getItem(position);
+        Room room = (Room) adapter.getItem(position);
 
         Toast.makeText(getContext(), "Selected room: " ,Toast.LENGTH_SHORT).show();
 

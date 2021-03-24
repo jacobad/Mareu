@@ -7,20 +7,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.room.Room;
+import com.example.myapplication.model.Room;
 
-import com.example.myapplication.model.Place;
-
-public class PlaceArrayAdapter extends ArrayAdapter<Place> {
+public class PlaceArrayAdapter extends ArrayAdapter<Room> {
 
     // Your sent context
 
 
     // Your custom values for the spinner (User)
-    private Place[] values;
+    private Room[] values;
 
     public PlaceArrayAdapter(Context context, int textViewResourceId,
-                       Place[] values) {
+                       Room[] values) {
         super(context, textViewResourceId, values);
         this.values = values;
     }
@@ -31,7 +29,7 @@ public class PlaceArrayAdapter extends ArrayAdapter<Place> {
     }
 
     @Override
-    public Place getItem(int position){
+    public Room getItem(int position){
         return values[position];
     }
 

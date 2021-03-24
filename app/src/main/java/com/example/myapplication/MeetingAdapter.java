@@ -4,21 +4,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.model.Meeting;
 
 import java.util.List;
 
-public class MyMeetingAdapter extends RecyclerView.Adapter<MyMeetingAdapter.MyViewHolder>  {
+public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MyViewHolder>  {
 
     List<Meeting> myMeeting;
 
-    MyMeetingAdapter(List<Meeting>myMeeting) {this.myMeeting = myMeeting; }
+    MeetingAdapter(List<Meeting>myMeeting) {this.myMeeting = myMeeting; }
 
 
     @Override
